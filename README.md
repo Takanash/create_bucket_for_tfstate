@@ -11,6 +11,8 @@
 touch main.tfbackend
 ```
 
+以下を記載
+
 ```
 bucket = ******           # バケット名
 key    = "main.tfstate"   # tfstateのファイル名
@@ -21,12 +23,13 @@ key    = "main.tfstate"   # tfstateのファイル名
 touch terraform.tfvars
 ```
 
+以下を記載
+
 ```
 access_key         = ******    # AWSのアクセスキー
 aws_profile        = "default" # aws-cliのプロファイル
 secret_key         = ******    # AWSのシークレットキー
 region             = "ap-northeast-1" # AWS region
-
 ```
 
 # tfstate bucketの作成
