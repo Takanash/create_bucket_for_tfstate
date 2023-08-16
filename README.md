@@ -14,8 +14,10 @@ touch main.tfbackend
 以下を記載
 
 ```
-bucket = ******           # バケット名
-key    = "main.tfstate"   # tfstateのファイル名
+bucket  = "my-bucket"      # 任意のバケット名
+key     = "main.tfstate"   # 任意のtfstateのファイル名
+region  = "ap-northeast-1" # AWS region
+profile = "my-profile"     # 任意のaws-cliのプロファイル
 ```
 
 ### main.tf用
@@ -26,9 +28,9 @@ touch terraform.tfvars
 以下を記載
 
 ```
-access_key         = ******    # AWSのアクセスキー
-aws_profile        = "default" # aws-cliのプロファイル
-secret_key         = ******    # AWSのシークレットキー
+access_key         = ******       # AWSのアクセスキー
+secret_key         = ******       # AWSのシークレットキー
+aws_profile        = "my-profile" # aws-cliのプロファイル
 region             = "ap-northeast-1" # AWS region
 ```
 
@@ -40,6 +42,11 @@ sh bin/create_bucket_for_tfstate.sh
 # tfstate bucketの削除
 ```
 sh bin/remove_bucket_for_tfstate.sh
+```
+
+# terraform init
+```
+terraform init -backend-config="main.tfbackend"
 ```
 
 # 参考
