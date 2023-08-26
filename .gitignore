@@ -34,3 +34,6 @@ override.tf.json
 terraform.rc
 
 main.tfbackend
+
+# IntelliJ IDEA
+.idea
